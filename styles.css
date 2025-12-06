@@ -1,0 +1,81 @@
+
+<style>
+html { scroll-behavior: smooth; }
+body {
+    background: linear-gradient(to bottom right, #fef9f9, #ffeaea);
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar hover and active effects */
+nav a {
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    color: #14b8a6;
+    background-color: rgba(20,184,166,0.1);
+    border-radius: 6px;
+}
+
+/* Center card styling */
+a.flex {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a.flex:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* About section text */
+#about p {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Contact info hover */
+#contact p {
+    transition: color 0.3s ease;
+}
+#contact p:hover {
+    color: #14b8a6;
+    cursor: pointer;
+}
+
+/* Bubble animation */
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+    100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+}
+.bubble {
+    border-radius: 50%;
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Specific bubble sizes, positions, and animation delays */
+.bubble1 {
+    width: 10rem; height: 10rem;
+    top: 5rem; left: 5rem;
+    background-color: rgba(255, 0, 0, 0.3);
+    animation-delay: 0s;
+}
+.bubble2 {
+    width: 12rem; height: 12rem;
+    top: 60%; right: 5rem;
+    background-color: rgba(255, 100, 100, 0.3);
+    animation-delay: 2s;
+}
+.bubble3 {
+    width: 8rem; height: 8rem;
+    bottom: 5rem; left: 40%;
+    background-color: rgba(200, 0, 0, 0.3);
+    animation-delay: 4s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo { width: 12rem; height: 12rem; }
+    a.flex { flex-direction: column; }
+}
+</style>

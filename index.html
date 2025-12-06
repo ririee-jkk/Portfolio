@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florrie Mae Gapuz | IT Student</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>    
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+      tailwind.config = {
+        darkmode: "class",
+        theme:{
+            extend: {
+                fontFamily: {
+                    sans: ["Poppins", "system-ui", "-apple-system", "Seqoe UI", "san-serif"],
+                    mont: ["Montserrat", "sans-serif"],
+                },
+                colors: {
+                    accent: {
+                        DEFAULT: "#14b8a6",
+                        soft: "#5eead4",
+                    },
+                },
+                boxShadow: {
+                    glow: "0 0 30px rgba(20,184,166,0.45)",
+                },
+            },
+        },
+      };
+    </script>
+
+<style>
+html { scroll-behavior: smooth; }
+body {
+    background: linear-gradient(to bottom right, #fef9f9, #ffeaea);
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar hover and active effects */
+nav a {
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    color: #14b8a6;
+    background-color: rgba(20,184,166,0.1);
+    border-radius: 6px;
+}
+
+/* Center card styling */
+a.flex {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a.flex:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* About section text */
+#about p {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Contact info hover */
+#contact p {
+    transition: color 0.3s ease;
+}
+#contact p:hover {
+    color: #14b8a6;
+    cursor: pointer;
+}
+
+/* Bubble animation */
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+    100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+}
+.bubble {
+    border-radius: 50%;
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Specific bubble sizes, positions, and animation delays */
+.bubble1 {
+    width: 10rem; height: 10rem;
+    top: 5rem; left: 5rem;
+    background-color: rgba(255, 0, 0, 0.3);
+    animation-delay: 0s;
+}
+.bubble2 {
+    width: 12rem; height: 12rem;
+    top: 60%; right: 5rem;
+    background-color: rgba(255, 100, 100, 0.3);
+    animation-delay: 2s;
+}
+.bubble3 {
+    width: 8rem; height: 8rem;
+    bottom: 5rem; left: 40%;
+    background-color: rgba(200, 0, 0, 0.3);
+    animation-delay: 4s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo { width: 12rem; height: 12rem; }
+    a.flex { flex-direction: column; }
+}
+</style>
+
+<body class="font-mont relative ">
+
+  <!-- Background Bubbles -->
+  <!-- Background Bubbles -->
+<div class="bubble bubble1"></div>
+<div class="bubble bubble2"></div>
+<div class="bubble bubble3"></div>
+
+<nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+    <!-- Logo + Name -->
+    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="https://i.pinimg.com/736x/d4/f6/ac/d4f6ac55f1c22d6bb70234732e3ccd12.jpg" alt="Logo" class="logo w-16 h-16 object-cover rounded"/>
+      <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">
+        PORTFOLIO
+      </span>
+    </a>
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center md:order-2">
+      <button data-collapse-toggle="navbar-menu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-menu">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+        <li>
+          <a href="#home" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">About</a>
+        </li>
+        <li>
+          <a href="#contact" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">Contact</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<!-- Center card below navbar -->
+<div class="flex justify-center mt-32 px-4">
+
+  <a href="#" class="flex flex-col items-center bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl">
+      <img class="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="img/3430761c-b036-4f63-9b3a-6184067bfc41.jpg" alt="Attached Photo">
+      <div class="flex flex-col justify-between md:p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">FLORRIE MAE R. GAPUZ</h5>
+          <p class="mb-6 text-body text-center">2 - BSIT | ARELLANO UNIVERSITY - JAS</p>
+      </div>
+  </a>
+
+</div>
+
+<!-- About Me Section -->
+<div id="about" class="mt-20 text-center px-6">
+  <h2 class="text-3xl font-bold mb-4">About Me</h2>
+  <p class="text-lg font-medium leading-relaxed max-w-2xl mx-auto">
+    I'm a 19 years old student studying at Arellano University - JAS,<br> 
+    currently a 2nd Year IT Student. I live in Taguig City, have 2 siblings working,<br> 
+    my mom raised us alone because my dad passed away when I was young,<br> 
+    who enjoys learning how technology works and improving my skills day by day.<br> 
+    I’m still figuring things out, but I’m motivated, curious, and always looking for ways to grow whether<br> 
+    it’s through coding, troubleshooting, or exploring new tech.
+  </p>
+</div>
+
+<!-- Contact Section -->
+<div class="mt-24 text-center px-6" id="contact">
+  <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+  <p class="text-lg text-body max-w-xl mx-auto mb-6">
+    Feel free to reach out for academic collaborations, IT projects, or portfolio inquiries.
+  </p>
+  <div class="flex flex-col items-center space-y-3">
+    <p><i class="fas fa-envelope mr-2"></i>gapuz.florriemae04@gmail.com</p>
+    <p><i class="fas fa-phone mr-2"></i>+63 9153753087</p>
+    <p><i class="fas fa-map-marker-alt mr-2"></i>Taguig City, Philippines</p>
+  </div>
+</div>
+
+<script>
+// ===== Navbar active link highlight on scroll =====
+const sections = document.querySelectorAll("#about, #contact");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove("text-accent");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("text-accent");
+        }
+    });
+});
+
+// ===== Fade-in sections on scroll =====
+const fadeSections = document.querySelectorAll("#about, #contact");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+        }
+    });
+}, { threshold: 0.2 });
+
+fadeSections.forEach(section => {
+    section.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700");
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>
